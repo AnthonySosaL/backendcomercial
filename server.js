@@ -9,7 +9,8 @@ const createSampleDataRoute = require("./routes/createSampleDataRoute");
 const checkoutRoute = require("./routes/checkoutRoute");
 const cartRoutes = require("./routes/cartRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
-
+const updateRoutes = require("./routes/updateRoutes");
+const createRoutes = require("./routes/createRoutes");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -27,6 +28,8 @@ app.use("/api/admin", createSampleDataRoute);
 app.use("/api/checkout", checkoutRoute);
 app.use("/api", cartRoutes);
 app.use("/api/uploadRoutes", uploadRoutes);
+app.use("/api/updateRoutes", updateRoutes);
+app.use("/api/createRoutes", createRoutes);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
